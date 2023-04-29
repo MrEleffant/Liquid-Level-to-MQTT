@@ -33,10 +33,6 @@ After configuring the "Liquid Level to MQTT" project, you can:
 
 The "Liquid Level to MQTT" project is licensed under the MIT license. Please see the LICENSE file for more information.
 
-## Author
-
-The "Liquid Level to MQTT" project was created by Jane Doe. You can contact her at jane.doe@example.com.
-
 ## Contribution
 
 Contributions to the "Liquid Level to MQTT" project are welcome! Please submit a pull request to propose modifications or improvements.
