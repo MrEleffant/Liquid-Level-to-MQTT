@@ -48,11 +48,28 @@ void loop() {
   Serial.print("Valeur analogique : ");
   Serial.println(valeur_analogique);
 
-  // Envoi de la valeur analogique au broker MQTT
+  // Conversion de la valeur analogique en volume en litres
+  float volume_litres = calculerVolume(valeur_analogique);
+  Serial.print("Volume en litres : ");
+  Serial.println(volume_litres);
+
+  // Envoi du volume au broker MQTT
   char message[20];
-  sprintf(message, "%d", valeur_analogique);
+  sprintf(message, "%.2f", volume_litres);
   mqttClient.publish(TOPIC, message);
 
-  // Attente de 5 minutes
-  delay(5 * 60 * 1000);
+  // Attente de 15 minutes
+  delay(15 * 60 * 1000);
+}
+
+float calculerVolume(int valeur_analogique) {
+  // Constantes pour le calcul du volume en litres
+  const float RADIUS_CM = 10.0;  // Rayon de la cuve en centimètres
+  const float HAUTEUR_CM = 30.0; // Hauteur de la cuve en centimètres
+
+  // Calcul du volume en litres
+  float hauteur_cm = map(valeur_analogique, 0, 1023, 0, HAUTEUR_CM);
+  float volume_litres = 3.14 * RADIUS_CM * RADIUS_CM * hauteur_cm;
+
+  return volume_litres;
 }
