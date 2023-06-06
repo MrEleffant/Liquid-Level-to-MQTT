@@ -18,7 +18,7 @@ To configure the "Liquid Level to MQTT" project, you need to:
 2. Download and install the necessary libraries (ESP8266WiFi, PubSubClient, etc.).
 3. Connect the ESP8266MOD board to your computer via a USB cable.
 4. Open the "Liquid_Level_to_MQTT.ino" file in the Arduino IDE.
-5. Configure the WiFi network and MQTT broker constants in the "Liquid_Level_to_MQTT.ino" file.
+5. Configure the WiFi network, MQTT brokern, MQTT client, MQTT topic and water level sensor in the "Liquid_Level_to_MQTT.ino" file.
 6. Compile and upload the code to the ESP8266MOD board.
 
 ## Usage
@@ -29,11 +29,3 @@ After configuring the "Liquid Level to MQTT" project, you can:
 2. Turn on the ESP8266MOD board and connect it to the WiFi network.
 3. Verify the connection to the MQTT broker.
 4. View the real-time level data on an MQTT client.
-
-## License
-
-The "Liquid Level to MQTT" project is licensed under the MIT license. Please see the LICENSE file for more information.
-
-## Contribution
-
-Contributions to the "Liquid Level to MQTT" project are welcome! Please submit a pull request to propose modifications or improvements.
