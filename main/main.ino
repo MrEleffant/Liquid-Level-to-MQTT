@@ -10,6 +10,9 @@ const char* BROKER_IP = "adresse_ip_du_broker_mqtt";
 const int BROKER_PORT = 1883;
 const char* TOPIC = "nom_du_topic_mqtt";
 
+// Définition du temps d'attente
+const attenteMinutes = 15 * 60 * 1000; // 15 minutes
+
 // Définition des constantes de la broche analogique
 const int PIN_ANALOGIQUE = A0;
 
@@ -59,7 +62,7 @@ void loop() {
   mqttClient.publish(TOPIC, message);
 
   // Attente de 15 minutes
-  delay(15 * 60 * 1000);
+  delay(attenteMinutes);
 }
 
 float calculerVolume(int valeur_analogique) {
